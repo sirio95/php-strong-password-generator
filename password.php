@@ -9,13 +9,15 @@
 
     <?php
     session_start();
-    $password = $_SESSION[$password];
+    include_once 'helper.php';
+    include_once 'data.php';
+    $password = $_SESSION['$password'];
 
     ?>
 </head>
 
 <body>
-    <h1>Complimenti, la tua password &egrave; <?php echo $password; ?></h1>
+    <h1>Complimenti, la tua password &egrave; <?php ?></h1>
 </body>
 
 </html>

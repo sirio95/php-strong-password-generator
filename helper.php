@@ -1,7 +1,8 @@
 <?php
+
 function random_num_arr($arrname, $arrlen, $maxnum, $ripetizione)
 {
-    for ($i; $i < $maxnum; $i++) {
+    for ($x = 0; $x < $maxnum; $x++) {
         if ($ripetizione) {
             $arrname[] = rand(1, $arrlen);
         } else {
@@ -15,16 +16,23 @@ function random_num_arr($arrname, $arrlen, $maxnum, $ripetizione)
 
     }
     ;
+    var_dump($arrname);
     return $arrname;
 }
 ;
 
 function pass_charact_selector($passarr, $numarr, $password)
 {
-    foreach ($numarr as $num) {
-        $newpass[] = $passarr[$num];
+    foreach ($numarr as $index => $num) {
+        $newpass[] = $passarr[$index];
     }
     ;
     return $password = implode($newpass);
 }
 ;
+
+function pass_generator($password_index_codes, $characters_max_number, $numero_caratteri, $ripetizione, $password_characters, $password)
+{
+    $password_index_codes = random_num_arr($password_index_codes, $characters_max_number, $numero_caratteri, $ripetizione);
+    return $password = pass_charact_selector($password_characters, $password_index_codes, $password);
+}

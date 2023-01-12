@@ -21,6 +21,7 @@
 
     $password_characters = [];
     $password_index_codes = [];
+    $characters_max_number = count($password_characters);
 
     $numero_caratteri = $_GET["numero_caratteri"] ?? 0;
     $lettere = $_GET["lettere"] ?? false;
@@ -36,6 +37,7 @@
     foreach ($parametri as $indice => $parametro) {
         if ($parametro) {
             $password_characters = array_merge($all_characters[$indice]);
+            var_dump($password_characters);
         }
     }
     ;
@@ -67,12 +69,10 @@
 
     <?php
     if ($numero_caratteri > 0) {
-        $password_index_codes = random_num_arr($password_index_codes, count($password_characters), $numero_caratteri, $ripetizione);
-        $passowrd = pass_charact_selector($password_characters, $password_index_codes, $password);
-        var_dump($password);
-        header('Location ./password.php');
+        $password = pass_generator($password_index_codes, $characters_max_number, $numero_caratteri, $ripetizione, $password_characters, $password);
+        echo "<h2> La tua password &egrave;: " . $password . "</h2>";
     } else {
-        die();
+        echo "<h2> Per generare una password devi selezionare almeno 1 carattere</h2>";
     }
 
     ?>
