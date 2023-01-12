@@ -3,17 +3,11 @@
 function random_num_arr($arrname, $arrlen, $maxnum, $ripetizione)
 {
     for ($x = 0; $x < $maxnum; $x++) {
-        if ($ripetizione) {
-            $arrname[] = rand(1, $arrlen);
-        } else {
-            if (!in_array((rand(1, $arrlen)), $arrname)) {
-                $arrname[] = rand(1, $arrlen);
-            } else {
-                return;
-            }
+        $random_num = rand(0, $arrlen);
+        if (!in_array($random_num, $arrname)) {
+            $arrname[] = $random_num;
         }
         ;
-
     }
     ;
     var_dump($arrname);
@@ -23,10 +17,12 @@ function random_num_arr($arrname, $arrlen, $maxnum, $ripetizione)
 
 function pass_charact_selector($passarr, $numarr, $password)
 {
-    foreach ($numarr as $index => $num) {
-        $newpass[] = $passarr[$index];
+    $newpass = [];
+    foreach ($numarr as $num) {
+        $newpass[] = $passarr[$num];
     }
     ;
+    var_dump($newpass);
     return $password = implode($newpass);
 }
 ;
