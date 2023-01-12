@@ -5,19 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password</title>
-
+    <title>password generata</title>
     <?php
     session_start();
-    include_once 'helper.php';
-    include_once 'data.php';
-    $password = $_SESSION['$password'];
-
+    $pass = $_SESSION["pass"];
     ?>
 </head>
 
 <body>
-    <h1>Complimenti, la tua password &egrave; <?php ?></h1>
+    <?php
+    echo "<h1>La tua password &egrave;: " . $pass . "</h1>";
+    ?>
+
 </body>
 
 </html>
