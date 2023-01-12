@@ -23,21 +23,19 @@
     $password_index_codes = [];
     $characters_max_number = count($password_characters);
 
-    $numero_caratteri = $_GET["numero_caratteri"] ?? 0;
+    $numero_caratteri = $_GET["numero_caratteri"];
     $lettere = $_GET["lettere"] ?? false;
     $numeri = $_GET["numeri"] ?? false;
     $caratteri_speciali = $_GET["caratteri_speciali"] ?? false;
     $ripetizione = $_GET["ripetizione"] ?? true;
 
     $parametri = [$lettere, $numeri, $caratteri_speciali];
-    $password;
     $_SESSION[$password] = $password;
 
 
     foreach ($parametri as $indice => $parametro) {
         if ($parametro) {
             $password_characters = array_merge($all_characters[$indice]);
-            var_dump($password_characters);
         }
     }
     ;

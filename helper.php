@@ -10,7 +10,6 @@ function random_num_arr($arrname, $arrlen, $maxnum, $ripetizione)
         ;
     }
     ;
-    var_dump($arrname);
     return $arrname;
 }
 ;
